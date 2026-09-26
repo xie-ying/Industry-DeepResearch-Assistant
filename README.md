@@ -24,7 +24,7 @@
 
 ### 1. 下载项目
 ```bash
-cd industry_information_assistant
+cd Industry-DeepResearch-Assistant
 ```
 
 ### 2. 一键启动所有基础服务 (推荐)
@@ -344,7 +344,7 @@ ALTER TABLE research_checkpoints ADD COLUMN IF NOT EXISTS final_report TEXT;
 ## 项目结构
 
 ```
-industry_information_assistant/
+Industry-DeepResearch-Assistant/
 ├── backend/
 │   ├── app/
 │   │   ├── api/          # API 路由
