@@ -1,0 +1,175 @@
+// Stock Card Component Styles
+// Premium Design System
+
+.card {
+  background: linear-gradient(135deg, #fff 0%, #fafafa 100%);
+  border-radius: 12px;
+  padding: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+  }
+
+  &.up {
+    border-left: 4px solid #ef4444;
+    background: linear-gradient(135deg, #fff 0%, #fef2f2 100%);
+
+    .priceSection {
+      color: #ef4444;
+    }
+    .badge {
+      background: #fef2f2;
+      color: #ef4444;
+    }
+  }
+
+  &.down {
+    border-left: 4px solid #22c55e;
+    background: linear-gradient(135deg, #fff 0%, #f0fdf4 100%);
+
+    .priceSection {
+      color: #22c55e;
+    }
+    .badge {
+      background: #f0fdf4;
+      color: #22c55e;
+    }
+  }
+
+  &.flat {
+    border-left: 4px solid #9ca3af;
+
+    .priceSection {
+      color: #6b7280;
+    }
+    .badge {
+      background: #f3f4f6;
+      color: #6b7280;
+    }
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.nameSection {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.icon {
+  font-size: 16px;
+  color: #6b7280;
+}
+
+.name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.code {
+  font-size: 12px;
+  color: #9ca3af;
+  background: #f3f4f6;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.badge {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+.priceSection {
+  margin-bottom: 16px;
+}
+
+.currentPrice {
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+}
+
+.currency {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.priceValue {
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+.changeInfo {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 4px;
+  font-size: 14px;
+  font-weight: 500;
+
+  :global(.anticon) {
+    font-size: 12px;
+  }
+}
+
+.changeValue {
+  font-weight: 600;
+}
+
+.changePercent {
+  opacity: 0.8;
+}
+
+.details {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.02);
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.detailItem {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.label {
+  font-size: 11px;
+  color: #9ca3af;
+}
+
+.value {
+  font-size: 13px;
+  font-weight: 500;
+  color: #374151;
+
+  &.high {
+    color: #ef4444;
+  }
+
+  &.low {
+    color: #22c55e;
+  }
+}
+
+.source {
+  font-size: 10px;
+  color: #c4c4c4;
+  text-align: right;
+}

@@ -1,0 +1,145 @@
+.com-sender {
+  background-color: #e9f5ff;
+  border-radius: 15px;
+
+  .com-sender__attachments {
+    padding: 12px 16px;
+    padding-bottom: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+
+    .ant-tag {
+      display: inline-flex !important;
+      align-items: center;
+      max-width: 220px;
+      padding: 6px 10px;
+      margin: 0;
+      font-size: 13px;
+      border-radius: 6px;
+      background: #fff;
+      border: 1px solid #d9d9d9;
+
+      &.ant-tag-success {
+        background: #f6ffed;
+        border-color: #b7eb8f;
+        color: #52c41a;
+      }
+
+      &.ant-tag-processing {
+        background: #e6f4ff;
+        border-color: #91caff;
+        color: #1677ff;
+      }
+
+      &.ant-tag-error {
+        background: #fff2f0;
+        border-color: #ffccc7;
+        color: #ff4d4f;
+      }
+
+      .anticon {
+        margin-right: 6px;
+        font-size: 14px;
+      }
+
+      .anticon-close {
+        margin-left: 6px;
+        margin-right: 0;
+        cursor: pointer;
+        font-size: 10px;
+        opacity: 0.6;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+
+    .attachment-filename {
+      max-width: 120px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      font-weight: 500;
+    }
+
+    .attachment-status {
+      font-size: 11px;
+      margin-left: 4px;
+      opacity: 0.7;
+    }
+  }
+
+  .ant-input {
+    background: transparent;
+    border: none;
+    padding: 14px 16px;
+    color: #474946;
+    box-shadow: none;
+
+    &::placeholder {
+      color: #6f798b;
+    }
+  }
+
+  .com-sender__actions {
+    display: flex;
+    justify-content: space-between;
+    padding: 14px 16px;
+    padding-top: 0;
+
+    .ant-btn {
+      --ant-button-padding-inline: 4px;
+
+      img {
+        width: 22px;
+        height: 22px;
+        -webkit-user-drag: none;
+      }
+    }
+  }
+
+  .com-sender__footer {
+    margin-top: 20px;
+    color: #6f798b;
+
+    .ant-switch {
+      --ant-switch-track-height: 30px;
+      --ant-switch-handle-size: 26px;
+      --ant-switch-track-min-width: 56px;
+    }
+  }
+}
+
+// 搜索模式下拉菜单
+.com-sender__search-dropdown {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 3px 6px -4px rgba(0, 0, 0, 0.12);
+  padding: 8px 4px;
+  min-width: 160px;
+
+  .ant-checkbox-wrapper {
+    display: flex;
+    padding: 8px 12px;
+    margin: 0;
+    border-radius: 6px;
+    transition: background 0.2s;
+    width: 100%;
+
+    &:hover {
+      background: #f5f5f5;
+    }
+
+    .ant-checkbox {
+      margin-right: 8px;
+    }
+
+    span:last-child {
+      font-size: 14px;
+      color: #333;
+    }
+  }
+}

@@ -1,0 +1,187 @@
+// ============================================
+// Premium Design System - Chart Component
+// ============================================
+
+.chart {
+  width: 100%;
+  margin: 20px 0;
+}
+
+.chartWrapper {
+  position: relative;
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  }
+}
+
+.chartTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 16px;
+  padding-left: 12px;
+  border-left: 2px solid #1a1a1a;
+  letter-spacing: -0.2px;
+}
+
+.chartContainer {
+  min-height: 300px;
+}
+
+.chartLoading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #bbb;
+  font-size: 13px;
+}
+
+.tableWrapper {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+
+  :global {
+    .ant-table {
+      font-size: 13px;
+    }
+
+    .ant-table-thead > tr > th {
+      background: #fafafa;
+      font-weight: 600;
+      color: #1a1a1a;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+    }
+
+    .ant-table-tbody > tr:hover > td {
+      background: #fafafa;
+    }
+  }
+}
+
+.insights {
+  background: #fff;
+  border-radius: 10px;
+  padding: 18px 22px;
+  margin: 20px 0;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.insightsTitle {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  letter-spacing: -0.1px;
+
+  &::before {
+    content: '';
+    display: inline-block;
+    width: 3px;
+    height: 14px;
+    background: #1a1a1a;
+    border-radius: 1.5px;
+  }
+}
+
+.insightsList {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.insightItem {
+  position: relative;
+  color: #555;
+  font-size: 13px;
+  line-height: 1.8;
+  margin-bottom: 6px;
+  padding-left: 16px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 4px;
+    height: 4px;
+    background: #d0d0d0;
+    border-radius: 50%;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/* ReAct 思考过程样式 - Premium Design */
+.reactThought {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-left: 2px solid #e5e5e5;
+  border-radius: 8px;
+  padding: 14px 18px;
+  margin: 10px 0;
+  font-size: 13px;
+  color: #555;
+}
+
+.reactAction {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-left: 2px solid #1a1a1a;
+  border-radius: 8px;
+  padding: 14px 18px;
+  margin: 10px 0;
+  font-size: 13px;
+  color: #555;
+}
+
+.reactObservation {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-left: 2px solid #999;
+  border-radius: 8px;
+  padding: 14px 18px;
+  margin: 10px 0;
+  font-size: 13px;
+  color: #555;
+}
+
+.reactStep {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #1a1a1a;
+}
+
+.reactStepNumber {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  background: #1a1a1a;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.reactContent {
+  line-height: 1.7;
+  color: #555;
+}

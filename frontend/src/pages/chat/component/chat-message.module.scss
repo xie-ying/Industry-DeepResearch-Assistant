@@ -1,0 +1,62 @@
+// ============================================
+// Premium Design System - Chat Messages
+// ============================================
+
+.chat-message {
+  display: flex;
+  flex-direction: column;
+  padding: 24px 0;
+  max-width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.chat-message-item {
+  font-size: 14px;
+  word-break: break-all;
+  word-wrap: break-word;
+  line-height: 1.7;
+  max-width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+
+  & + & {
+    margin-top: 12px;
+  }
+}
+
+.chat-message-item--user {
+  color: #1a1a1a;
+  font-size: 18px;
+  background-color: transparent;
+  border-radius: 0;
+  padding: 0;
+  font-weight: 600;
+  position: relative;
+  letter-spacing: -0.3px;
+  line-height: 1.5;
+}
+
+.chat-message-item--assistant + .chat-message-item--user {
+  margin-top: 48px;
+  padding-top: 32px;
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 1px;
+    background: linear-gradient(90deg, #e0e0e0 0%, transparent 100%);
+  }
+}
+
+.chat-message-item--assistant {
+  margin-top: 24px;
+  color: #444;
+  font-size: 15px;
+  line-height: 1.8;
+  letter-spacing: -0.1px;
+}

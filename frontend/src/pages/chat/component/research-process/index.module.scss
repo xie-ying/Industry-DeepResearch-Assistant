@@ -1,0 +1,194 @@
+// ============================================
+// Premium Design System - Research Process Timeline
+// ============================================
+
+.process {
+  padding: 20px 0;
+}
+
+.header {
+  font-size: 11px;
+  font-weight: 600;
+  color: #999;
+  margin-bottom: 20px;
+  padding: 0 4px;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+}
+
+.timeline {
+  position: relative;
+}
+
+.step {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  padding: 14px 16px;
+  margin-bottom: 2px;
+  border-radius: 10px;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: default;
+
+  &.clickable {
+    cursor: pointer;
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.02);
+
+      .arrow {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+  }
+
+  &.selected {
+    background: rgba(0, 0, 0, 0.03);
+
+    .title {
+      color: #1a1a1a;
+    }
+  }
+}
+
+.line {
+  position: absolute;
+  left: 27px;
+  top: 44px;
+  width: 1px;
+  height: calc(100% - 8px);
+  background: #e8e8e8;
+  transition: background 0.3s;
+
+  &.completed {
+    background: #1a1a1a;
+  }
+}
+
+.icon {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 14px;
+  font-size: 10px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &.completed {
+    background: #1a1a1a;
+    color: #fff;
+  }
+
+  &.running {
+    background: #fff;
+    color: #1a1a1a;
+    border: 1.5px solid #1a1a1a;
+    animation: breathe 2s ease-in-out infinite;
+  }
+
+  &.pending {
+    background: #fff;
+    border: 1.5px solid #e0e0e0;
+    color: #d0d0d0;
+  }
+}
+
+@keyframes breathe {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(26, 26, 26, 0.1);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 4px rgba(26, 26, 26, 0);
+  }
+}
+
+.dot {
+  width: 5px;
+  height: 5px;
+  background: #d9d9d9;
+  border-radius: 50%;
+}
+
+.content {
+  flex: 1;
+  min-width: 0;
+}
+
+.title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #444;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  letter-spacing: -0.1px;
+}
+
+.runningDot {
+  width: 5px;
+  height: 5px;
+  background: #1a1a1a;
+  border-radius: 50%;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(1.3);
+  }
+}
+
+.subtitle {
+  font-size: 12px;
+  color: #aaa;
+  margin-top: 4px;
+  font-weight: 400;
+}
+
+.tags {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  background: transparent;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  font-size: 11px;
+  color: #888;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+
+  &.chartTag {
+    border-color: #e5e5e5;
+    color: #888;
+  }
+}
+
+.arrow {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #c4c4c4;
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: all 0.2s ease;
+}

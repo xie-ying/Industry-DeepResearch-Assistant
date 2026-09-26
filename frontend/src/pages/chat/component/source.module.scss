@@ -1,0 +1,45 @@
+.source__list {
+  flex-grow: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  .source__item {
+    display: flex;
+    align-items: center;
+    background-color: #e9f5ff;
+    border-radius: 100px;
+    padding: 10px;
+    font-size: 14px;
+    color: #333;
+    max-width: 100%;
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    .icon {
+      flex-shrink: 0;
+      width: 22px;
+      height: 22px;
+      border-radius: 100px;
+    }
+
+    .info {
+      flex-grow: 1;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .host {
+      font-weight: bold;
+    }
+
+    .name {
+      margin-left: 8px;
+      color: #999;
+    }
+  }
+}

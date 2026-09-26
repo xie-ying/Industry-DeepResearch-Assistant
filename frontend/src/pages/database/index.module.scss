@@ -1,0 +1,491 @@
+// 扁平、性冷淡、高级风格
+$border-color: rgba(255, 255, 255, 0.06);
+$text-primary: rgba(255, 255, 255, 0.88);
+$text-secondary: rgba(255, 255, 255, 0.45);
+$text-tertiary: rgba(255, 255, 255, 0.25);
+$bg-hover: rgba(255, 255, 255, 0.04);
+$bg-active: rgba(255, 255, 255, 0.08);
+$accent: rgba(255, 255, 255, 0.65);
+
+.page {
+  min-height: calc(100vh - 40px);
+  display: flex;
+  flex-direction: column;
+  background: #0d0d0f;
+}
+
+.empty {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+}
+
+// 头部
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  border-bottom: 1px solid $border-color;
+  flex-shrink: 0;
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.headerIcon {
+  font-size: 18px;
+  color: $text-secondary;
+}
+
+.headerTitle {
+  font-size: 15px;
+  font-weight: 500;
+  color: $text-primary;
+  letter-spacing: 0.5px;
+}
+
+.headerBadge {
+  font-size: 11px;
+  color: $text-tertiary;
+  padding: 2px 8px;
+  border: 1px solid $border-color;
+  border-radius: 4px;
+  font-family: 'SF Mono', 'Monaco', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.headerRight {
+  display: flex;
+  align-items: center;
+}
+
+.nlInput {
+  width: 280px;
+  background: transparent !important;
+  border: 1px solid $border-color !important;
+  border-radius: 6px !important;
+  transition: border-color 0.2s;
+
+  &:hover, &:focus-within {
+    border-color: rgba(255, 255, 255, 0.15) !important;
+  }
+
+  :global {
+    .ant-input {
+      background: transparent !important;
+      color: $text-primary;
+      font-size: 13px;
+
+      &::placeholder {
+        color: $text-tertiary;
+      }
+    }
+
+    .ant-input-prefix {
+      color: $text-tertiary;
+      margin-right: 8px;
+    }
+
+    .ant-input-clear-icon {
+      color: $text-tertiary;
+    }
+  }
+}
+
+// 内容区
+.content {
+  flex: 1;
+  display: flex;
+  min-height: 0;
+}
+
+// 侧边栏
+.sidebar {
+  width: 260px;
+  border-right: 1px solid $border-color;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.sidebarHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  font-size: 12px;
+  color: $text-secondary;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 1px solid $border-color;
+
+  .count {
+    font-family: 'SF Mono', 'Monaco', monospace;
+    color: $text-tertiary;
+  }
+}
+
+.tableList {
+  flex: 1;
+  overflow-y: auto;
+  padding: 8px;
+}
+
+.listLoading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0;
+}
+
+.listEmpty {
+  padding: 40px 20px;
+  text-align: center;
+  font-size: 13px;
+  color: $text-tertiary;
+}
+
+.tableItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.15s;
+  margin-bottom: 2px;
+
+  &:hover {
+    background: $bg-hover;
+  }
+
+  &.active {
+    background: $bg-active;
+
+    .tableName {
+      color: $text-primary;
+    }
+
+    .tableIcon {
+      color: $accent;
+    }
+  }
+}
+
+.tableIcon {
+  font-size: 14px;
+  color: $text-tertiary;
+  flex-shrink: 0;
+}
+
+.tableInfo {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.tableName {
+  font-size: 13px;
+  color: $text-secondary;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tableMeta {
+  font-size: 11px;
+  color: $text-tertiary;
+  font-family: 'SF Mono', 'Monaco', monospace;
+}
+
+// 主内容区
+.main {
+  flex: 1;
+  overflow-y: auto;
+  padding: 24px;
+  min-width: 0;
+}
+
+// 自然语言查询结果
+.nlLoading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  background: $bg-hover;
+  border-radius: 8px;
+  margin-bottom: 24px;
+  font-size: 13px;
+  color: $text-secondary;
+}
+
+.nlResult {
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid $border-color;
+  border-radius: 8px;
+  margin-bottom: 24px;
+  overflow: hidden;
+}
+
+.nlHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-bottom: 1px solid $border-color;
+}
+
+.nlLabel {
+  font-size: 12px;
+  color: $text-secondary;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.nlClose {
+  font-size: 16px;
+  color: $text-tertiary;
+  cursor: pointer;
+  padding: 4px 8px;
+  line-height: 1;
+
+  &:hover {
+    color: $text-secondary;
+  }
+}
+
+.nlSql {
+  padding: 12px 16px;
+  border-bottom: 1px solid $border-color;
+  background: rgba(0, 0, 0, 0.15);
+
+  code {
+    font-family: 'SF Mono', 'Monaco', 'Menlo', monospace;
+    font-size: 12px;
+    color: rgba(130, 170, 255, 0.8);
+    line-height: 1.6;
+    white-space: pre-wrap;
+    word-break: break-all;
+  }
+}
+
+.nlTable {
+  :global {
+    .ant-table {
+      background: transparent !important;
+    }
+
+    .ant-table-thead > tr > th {
+      background: transparent !important;
+      border-bottom: 1px solid $border-color !important;
+      color: $text-secondary;
+      font-size: 11px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 10px 16px;
+    }
+
+    .ant-table-tbody > tr > td {
+      background: transparent !important;
+      border-bottom: 1px solid $border-color !important;
+      color: $text-primary;
+      font-size: 13px;
+      padding: 10px 16px;
+    }
+
+    .ant-table-tbody > tr:last-child > td {
+      border-bottom: none !important;
+    }
+  }
+}
+
+.nlError {
+  padding: 16px;
+  color: rgba(255, 120, 120, 0.8);
+  font-size: 13px;
+}
+
+// 表结构
+.schema {
+  // nothing special
+}
+
+.schemaLoading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 0;
+}
+
+.schemaHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid $border-color;
+}
+
+.schemaTitle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  font-weight: 500;
+  color: $text-primary;
+
+  :global(.anticon) {
+    color: $text-secondary;
+    font-size: 16px;
+  }
+}
+
+.schemaMeta {
+  font-size: 12px;
+  color: $text-tertiary;
+  font-family: 'SF Mono', 'Monaco', monospace;
+}
+
+// 列表格
+.columns {
+  border: 1px solid $border-color;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.columnHeader {
+  display: grid;
+  grid-template-columns: 2fr 1.5fr 0.8fr 1.5fr;
+  gap: 16px;
+  padding: 12px 20px;
+  background: rgba(255, 255, 255, 0.02);
+  border-bottom: 1px solid $border-color;
+  font-size: 11px;
+  color: $text-tertiary;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+}
+
+.columnRow {
+  display: grid;
+  grid-template-columns: 2fr 1.5fr 0.8fr 1.5fr;
+  gap: 16px;
+  padding: 12px 20px;
+  border-bottom: 1px solid $border-color;
+  transition: background 0.15s;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &:hover {
+    background: $bg-hover;
+  }
+}
+
+.colName {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: $text-primary;
+  font-weight: 500;
+}
+
+.keyIcon {
+  font-size: 11px;
+  color: rgba(255, 200, 100, 0.6);
+}
+
+.colType {
+  display: flex;
+  align-items: center;
+}
+
+.typeTag {
+  background: transparent !important;
+  border: 1px solid $border-color !important;
+  color: $text-secondary !important;
+  font-size: 11px !important;
+  font-family: 'SF Mono', 'Monaco', monospace !important;
+  padding: 1px 8px !important;
+  border-radius: 4px !important;
+}
+
+.colNull {
+  font-size: 12px;
+  color: $text-tertiary;
+}
+
+.colDefault {
+  font-size: 12px;
+  color: $text-tertiary;
+  font-family: 'SF Mono', 'Monaco', monospace;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// 索引
+.indexes {
+  margin-top: 24px;
+  border: 1px solid $border-color;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.indexHeader {
+  padding: 12px 20px;
+  background: rgba(255, 255, 255, 0.02);
+  border-bottom: 1px solid $border-color;
+  font-size: 11px;
+  color: $text-tertiary;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+}
+
+.indexRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 20px;
+  border-bottom: 1px solid $border-color;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &:hover {
+    background: $bg-hover;
+  }
+}
+
+.indexName {
+  font-size: 13px;
+  color: $text-primary;
+  font-weight: 500;
+  flex-shrink: 0;
+}
+
+.indexDef {
+  font-size: 12px;
+  color: $text-tertiary;
+  font-family: 'SF Mono', 'Monaco', monospace;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

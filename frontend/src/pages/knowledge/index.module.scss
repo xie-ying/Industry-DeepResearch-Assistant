@@ -1,0 +1,171 @@
+.knowledge-page {
+  margin: 0 auto;
+  min-height: 100%;
+  padding: 40px;
+  box-sizing: border-box;
+  max-width: 1200px;
+  min-width: 600px;
+
+  .empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 0;
+    gap: 16px;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+
+    h2 {
+      margin: 0;
+      font-size: 24px;
+      font-weight: 600;
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      h2 {
+        margin-left: 8px;
+      }
+    }
+
+    .header-right {
+      display: flex;
+      gap: 12px;
+    }
+  }
+
+  .description {
+    margin-bottom: 24px;
+    padding: 12px 16px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+  }
+}
+
+.kb-list {
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+  }
+}
+
+.kb-card {
+  position: relative;
+  border-radius: 12px;
+  transition: box-shadow 0.3s, transform 0.2s;
+
+  &:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+  }
+
+  :global {
+    .ant-card-body {
+      padding: 20px;
+    }
+  }
+
+  .card-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+    font-size: 24px;
+    color: white;
+  }
+
+  .card-content {
+    .card-title {
+      display: block;
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+
+    .card-desc {
+      font-size: 13px;
+      margin-bottom: 12px !important;
+      min-height: 40px;
+    }
+
+    .card-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      color: #999;
+    }
+  }
+
+  .card-actions {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  &:hover .card-actions {
+    opacity: 1;
+  }
+}
+
+.kb-detail {
+  .doc-list {
+    background: white;
+    border-radius: 12px;
+    padding: 8px;
+
+    :global {
+      .ant-list-item {
+        padding: 12px 16px;
+        border-radius: 8px;
+        transition: background-color 0.2s;
+
+        &:hover {
+          background-color: #f5f5f5;
+        }
+      }
+    }
+  }
+
+  .doc-item {
+    .doc-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .doc-meta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 12px;
+      color: #999;
+      flex-wrap: wrap;
+    }
+
+    .chunk-link {
+      color: #1890ff;
+      cursor: pointer;
+      transition: color 0.2s;
+
+      &:hover {
+        color: #40a9ff;
+        text-decoration: underline;
+      }
+    }
+  }
+}

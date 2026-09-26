@@ -1,0 +1,356 @@
+// ============================================
+// Premium Design System - Research Detail Panel
+// ============================================
+
+.panel {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  overflow: hidden;
+}
+
+// 固定区域（不滚动）
+.fixedHeader {
+  flex-shrink: 0;
+}
+
+.empty {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #c4c4c4;
+}
+
+.emptyIcon {
+  font-size: 40px;
+  margin-bottom: 16px;
+  opacity: 0.3;
+  color: #d4d4d4;
+}
+
+.emptyText {
+  font-size: 13px;
+  color: #b0b0b0;
+  letter-spacing: 0.3px;
+}
+
+// 研究进度步骤条 - 极简设计
+.stepper {
+  display: flex;
+  align-items: center;
+  padding: 16px 24px;
+  background: #fff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+  gap: 0;
+  flex-shrink: 0;
+}
+
+.stepItem {
+  display: flex;
+  align-items: center;
+  position: relative;
+  opacity: 0.35;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &.completed {
+    opacity: 1;
+  }
+
+  &.running {
+    opacity: 1;
+  }
+
+  &.active {
+    .stepIcon {
+      background: #1a1a1a;
+      color: #fff;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    .stepLabel {
+      color: #1a1a1a;
+      font-weight: 600;
+    }
+  }
+
+  &.clickable {
+    cursor: pointer;
+
+    &:hover {
+      .stepIcon {
+        transform: scale(1.08);
+      }
+    }
+  }
+}
+
+.stepIcon {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #e5e5e5;
+  color: #999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  flex-shrink: 0;
+
+  .completed & {
+    background: #1a1a1a;
+    color: #fff;
+  }
+
+  .running & {
+    background: #1a1a1a;
+    color: #fff;
+    animation: softPulse 2s ease-in-out infinite;
+  }
+}
+
+@keyframes softPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(26, 26, 26, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(26, 26, 26, 0);
+  }
+}
+
+.stepLabel {
+  margin-left: 8px;
+  font-size: 12px;
+  color: #666;
+  white-space: nowrap;
+  transition: all 0.3s;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+}
+
+.stepLine {
+  width: 20px;
+  height: 1px;
+  background: #e5e5e5;
+  margin: 0 10px;
+  flex-shrink: 0;
+  transition: background 0.3s;
+
+  .completed + & {
+    background: #1a1a1a;
+  }
+}
+
+.header {
+  padding: 24px 28px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.headerLeft {
+  flex: 1;
+}
+
+.stepType {
+  font-size: 11px;
+  color: #999;
+  margin-bottom: 6px;
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0;
+  line-height: 1.5;
+  letter-spacing: -0.3px;
+}
+
+.closeBtn {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  color: #999;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.2s;
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.04);
+    color: #1a1a1a;
+  }
+}
+
+.tabs {
+  display: flex;
+  padding: 0 24px;
+  gap: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+  flex-shrink: 0;
+  background: #fff;
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 20px;
+  border: none;
+  background: transparent;
+  color: #888;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s;
+
+  &:hover {
+    color: #1a1a1a;
+  }
+
+  &.active {
+    color: #1a1a1a;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 20px;
+      right: 20px;
+      height: 2px;
+      background: #1a1a1a;
+      border-radius: 1px;
+    }
+  }
+}
+
+.count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 6px;
+  background: rgba(0, 0, 0, 0.04);
+  border-radius: 9px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #888;
+
+  .active & {
+    background: #1a1a1a;
+    color: #fff;
+  }
+}
+
+.content {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 20px 24px;
+  min-height: 0;
+
+  // 优雅的滚动条
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.2);
+    }
+  }
+}
+
+// Process Report 样式
+.processReport {
+  padding: 8px 0;
+
+  :global {
+    .markdown-body {
+      font-size: 14px;
+      line-height: 1.8;
+      color: #333;
+
+      h1, h2, h3, h4, h5, h6 {
+        margin-top: 24px;
+        margin-bottom: 16px;
+        font-weight: 600;
+        color: #1a1a1a;
+      }
+
+      h1 { font-size: 24px; }
+      h2 { font-size: 20px; }
+      h3 { font-size: 16px; }
+
+      p {
+        margin-bottom: 16px;
+      }
+
+      ul, ol {
+        padding-left: 24px;
+        margin-bottom: 16px;
+      }
+
+      li {
+        margin-bottom: 8px;
+      }
+
+      blockquote {
+        border-left: 3px solid #1a1a1a;
+        padding-left: 16px;
+        margin: 16px 0;
+        color: #666;
+      }
+
+      code {
+        background: rgba(0, 0, 0, 0.04);
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-size: 13px;
+      }
+
+      pre {
+        background: #f8f8f8;
+        padding: 16px;
+        border-radius: 8px;
+        overflow-x: auto;
+
+        code {
+          background: none;
+          padding: 0;
+        }
+      }
+    }
+  }
+}
+
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  color: #c4c4c4;
+}

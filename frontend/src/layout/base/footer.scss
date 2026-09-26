@@ -1,0 +1,99 @@
+.base-layout-footer {
+  flex-shrink: 0;
+  align-self: center;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  gap: 16px;
+  padding: 16px 0;
+}
+
+.user-avatar-wrapper {
+  cursor: pointer;
+  transition: transform 0.15s ease;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  .user-avatar {
+    background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
+    color: #fff;
+    font-weight: 500;
+    border: none;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  }
+}
+
+// 用户下拉菜单 - 覆盖全局暗色主题
+:global {
+  .user-dropdown-overlay {
+    .ant-dropdown-menu {
+      min-width: 165px;
+      padding: 5px;
+      border-radius: 8px;
+      color: #333 !important;
+      background: #fff !important;
+      background-color: #fff !important;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12) !important;
+      --ant-color-bg-elevated: #fff;
+      --ant-color-text: #333;
+      --ant-control-item-bg-hover: #f0f7ff;
+    }
+
+    .ant-dropdown-menu-item {
+      border-radius: 4px;
+      padding: 8px 10px;
+      color: #333 !important;
+      background: transparent !important;
+      background-color: transparent !important;
+
+      &:hover {
+        background: #f0f7ff !important;
+        background-color: #f0f7ff !important;
+      }
+    }
+
+    .ant-dropdown-menu-item-disabled {
+      cursor: default;
+      opacity: 1;
+      color: #333 !important;
+
+      &:hover {
+        background: transparent !important;
+        background-color: transparent !important;
+      }
+    }
+
+    .ant-dropdown-menu-item-danger {
+      color: #e07070 !important;
+
+      &:hover {
+        background: #fdf5f5 !important;
+        background-color: #fdf5f5 !important;
+        color: #d06060 !important;
+      }
+    }
+
+    .ant-dropdown-menu-item-divider {
+      background: #f0f0f0 !important;
+      background-color: #f0f0f0 !important;
+    }
+  }
+}
+
+.user-menu-info {
+  padding: 2px 0;
+
+  .user-menu-name {
+    font-weight: 500;
+    font-size: 13px;
+    color: #333;
+    margin-bottom: 1px;
+  }
+
+  .user-menu-email {
+    font-size: 11px;
+    color: #999;
+  }
+}

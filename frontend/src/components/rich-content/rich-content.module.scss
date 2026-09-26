@@ -1,0 +1,188 @@
+// ============================================
+// Premium Design System - Rich Content
+// ============================================
+
+.richContent {
+  width: 100%;
+}
+
+.textBlock {
+  margin: 8px 0;
+}
+
+.chartBlock {
+  margin: 20px 0;
+}
+
+.tableBlock {
+  margin: 20px 0;
+}
+
+.insightBlock {
+  margin: 20px 0;
+}
+
+/* ReAct 思考过程块 - Premium Design */
+.thoughtBlock {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-left: 2px solid #e5e5e5;
+  border-radius: 8px;
+  padding: 14px 18px;
+  margin: 12px 0;
+}
+
+.actionBlock {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-left: 2px solid #1a1a1a;
+  border-radius: 8px;
+  padding: 14px 18px;
+  margin: 12px 0;
+}
+
+.observationBlock {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-left: 2px solid #999;
+  border-radius: 8px;
+  padding: 14px 18px;
+  margin: 12px 0;
+
+  &.success {
+    border-left-color: #666;
+  }
+
+  &.error {
+    border-left-color: #999;
+  }
+}
+
+.blockHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  font-size: 13px;
+}
+
+.stepBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 50px;
+  height: 20px;
+  padding: 0 10px;
+  background: transparent;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 10px;
+  font-weight: 600;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.blockLabel {
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.toolName {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  background: transparent;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  font-family: 'SF Mono', 'Monaco', 'Menlo', monospace;
+  font-size: 11px;
+  color: #666;
+}
+
+.blockContent {
+  font-size: 13px;
+  line-height: 1.7;
+  color: #555;
+}
+
+.paramsCode,
+.resultCode {
+  margin: 10px 0 0;
+  padding: 12px 14px;
+  background: #fafafa;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  border-radius: 6px;
+  font-family: 'SF Mono', 'Monaco', 'Menlo', monospace;
+  font-size: 11px;
+  line-height: 1.6;
+  overflow-x: auto;
+  max-height: 200px;
+  overflow-y: auto;
+  color: #555;
+}
+
+/* 代码块 */
+.codeBlock {
+  position: relative;
+  margin: 16px 0;
+  background: #1a1a1a;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.codeLanguage {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  padding: 3px 10px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  font-size: 10px;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.codeContent {
+  margin: 0;
+  padding: 18px;
+  overflow-x: auto;
+
+  code {
+    font-family: 'SF Mono', 'Monaco', 'Menlo', monospace;
+    font-size: 12px;
+    line-height: 1.6;
+    color: #e0e0e0;
+  }
+}
+
+/* 动画效果 */
+.thoughtBlock,
+.actionBlock,
+.observationBlock {
+  animation: fadeIn 0.25s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 响应式适配 */
+@media (max-width: 768px) {
+  .blockHeader {
+    flex-wrap: wrap;
+  }
+
+  .paramsCode,
+  .resultCode {
+    font-size: 10px;
+  }
+}

@@ -1,0 +1,79 @@
+// ============================================
+// Premium Design System - Page Layout
+// ============================================
+
+.com-page-layout {
+  display: flex;
+
+  .com-page-layout__main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    min-width: 600px;
+    background: #fff;
+
+    .com-page-layout__main-content {
+      flex-grow: 1;
+      flex-shrink: 0;
+      max-width: 100%;
+      overflow: hidden;
+      box-sizing: border-box;
+    }
+  }
+
+  .com-page-layout__sender {
+    position: sticky;
+    bottom: 0;
+    z-index: 900;
+    padding: 18px 40px;
+    background: #fff;
+  }
+
+  .com-page-layout__right {
+    flex-shrink: 0;
+    width: 408px;
+    background: #fff;
+  }
+
+  // 宽右侧面板模式：左35% + 右65%
+  &.wide-right-mode {
+    height: 100vh;
+    overflow: hidden;
+
+    .com-page-layout__main {
+      flex: none;
+      width: 35%;
+      min-width: 380px;
+      max-width: 35%;
+      height: 100vh;
+      overflow-y: auto;
+      overflow-x: hidden;
+      background: #fff;
+      // 隐藏滚动条但保持滚动功能
+      scrollbar-width: none; // Firefox
+      -ms-overflow-style: none; // IE/Edge
+      &::-webkit-scrollbar {
+        display: none; // Chrome/Safari
+      }
+    }
+
+    .com-page-layout__right {
+      flex: 1;
+      width: auto;
+      min-width: 400px;
+      border-left: 1px solid rgba(0, 0, 0, 0.04);
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      background: #fafafa;
+    }
+
+    .com-page-layout__sender {
+      padding: 12px 20px;
+      background: #fff;
+      border-top: 1px solid rgba(0, 0, 0, 0.04);
+    }
+  }
+}

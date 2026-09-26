@@ -1,0 +1,69 @@
+.drawer {
+  :global(.ant-drawer-body) {
+    padding: 16px;
+    background: #fafafa;
+  }
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  .filename {
+    font-weight: 500;
+    max-width: 300px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 0;
+  gap: 16px;
+}
+
+.chunkList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.chunkItem {
+  background: white;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.2s;
+
+  &:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  }
+}
+
+.chunkHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.charCount {
+  font-size: 12px;
+}
+
+.chunkContent {
+  margin: 0 !important;
+  font-size: 14px;
+  line-height: 1.8;
+  color: #333;
+  white-space: pre-wrap;
+  word-break: break-word;
+}

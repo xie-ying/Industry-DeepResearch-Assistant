@@ -1,0 +1,23 @@
+.ant-btn-color-primary.ant-btn-variant-text {
+  --ant-color-link: var(
+    --ant-color-primary
+  ); //  antd 错误地将 text/primary 颜色设为了 ant-color-link
+}
+
+// 仅对特定下拉菜单使用暗色主题（排除用户菜单）
+.ant-dropdown-menu:not(.user-dropdown-overlay .ant-dropdown-menu) {
+  color: white;
+  background-color: black;
+  --ant-color-bg-elevated: black;
+  --ant-color-text: white;
+  --ant-control-item-bg-hover: rgba(255, 255, 255, 0.3);
+}
+
+// 用户下拉菜单使用白色
+.user-dropdown-overlay .ant-dropdown-menu {
+  color: #333;
+  background-color: #fff;
+  --ant-color-bg-elevated: #fff;
+  --ant-color-text: #333;
+  --ant-control-item-bg-hover: #f0f7ff;
+}

@@ -1,0 +1,22 @@
+:root {
+  background-color: #fff;
+  font-size: 14px;
+  line-height: 1.5;
+  font-family:
+    Inter,
+    Pingfang SC,
+    Microsoft Yahei,
+    sans-serif;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.scrollbar-style {
+  scrollbar-width: thin;
+}
+.scrollbar-style::-webkit-scrollbar {
+  width: 8px;
+}

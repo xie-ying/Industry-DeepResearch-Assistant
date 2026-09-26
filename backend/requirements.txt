@@ -1,0 +1,62 @@
+# Web Framework
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+python-multipart>=0.0.6
+python-dotenv>=1.0.0
+
+# Database
+sqlalchemy>=2.0.0
+psycopg2-binary>=2.9.9
+alembic>=1.12.0
+
+# Redis
+redis>=5.0.0
+
+# Authentication
+python-jose[cryptography]>=3.3.0
+passlib[bcrypt]>=1.7.4
+pydantic[email]>=2.5.0
+
+# AI/LLM
+openai>=1.0.0
+tiktoken>=0.5.0
+llama-index>=0.9.0
+llama-index-postprocessor-dashscope-rerank>=0.1.0
+langgraph>=0.0.20
+
+# Vector Database
+pymilvus>=2.3.0
+
+# NLP
+nltk>=3.8.0
+jieba>=0.42.0
+
+# HTTP Client
+httpx>=0.25.0
+aiohttp>=3.9.0
+requests>=2.31.0
+
+# Web Scraping & Text Extraction
+beautifulsoup4>=4.12.0
+trafilatura>=1.6.0
+lxml>=4.9.0
+
+# Document Parsing
+PyPDF2>=3.0.0
+python-docx>=1.0.0
+openpyxl>=3.1.0
+markdown>=3.5.0
+alibabacloud_docmind_api20220711>=1.0.0
+
+# Data Processing
+numpy>=1.24.0
+pandas>=2.0.0
+
+# Visualization
+matplotlib>=3.7.0
+seaborn>=0.12.0
+wordcloud>=1.9.0
+
+# Utils
+pyyaml>=6.0.0
+python-dateutil>=2.8.0

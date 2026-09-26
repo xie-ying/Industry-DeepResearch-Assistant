@@ -1,0 +1,36 @@
+.drawer {
+  background: rgba(255, 255, 255, 0.502);
+  border-top-left-radius: 20px;
+  height: 100vh;
+  box-sizing: border-box;
+  position: sticky;
+  top: 0;
+  padding: 12px 0;
+
+  display: flex;
+  flex-direction: column;
+
+  .drawer__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 30px;
+
+    .drawer__title {
+      flex-grow: 1;
+      font-size: 22px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .drawer__close {
+      color: #aaa;
+      font-size: 12px;
+    }
+  }
+
+  .drawer__content {
+    padding: 12px 30px;
+    overflow: auto;
+  }
+}

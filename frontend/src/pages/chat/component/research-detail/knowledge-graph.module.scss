@@ -1,0 +1,43 @@
+// ============================================
+// Premium Design System - Knowledge Graph
+// ============================================
+
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  color: #c4c4c4;
+  font-size: 13px;
+  gap: 12px;
+}
+
+.emptyIcon {
+  font-size: 28px;
+  opacity: 0.3;
+}
+
+.graph {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.stats {
+  font-size: 12px;
+  color: #999;
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+  letter-spacing: 0.2px;
+}
+
+.chartContainer {
+  flex: 1;
+  min-height: 400px;
+  background: #fafafa;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.03);
+}

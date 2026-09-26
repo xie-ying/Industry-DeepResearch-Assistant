@@ -1,0 +1,6 @@
+{
+  "*.{md,json}": ["prettier --cache --write"],
+  "*.{js,jsx}": ["prettier --cache --write"],
+  "*.{css,less}": ["prettier --cache --write"],
+  "*.ts?(x)": ["prettier --cache --parser=typescript --write"]
+}

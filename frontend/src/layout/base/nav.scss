@@ -1,0 +1,88 @@
+// 行业选择器
+.industry-selector {
+  width: 100%;
+  padding: 16px 8px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+
+  &__trigger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 8px 12px;
+    background-color: var(--ant-color-primary);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
+    }
+  }
+
+  &__label {
+    color: #fff;
+    font-size: 13px;
+    font-weight: 500;
+  }
+
+  &__icon {
+    color: #fff;
+    font-size: 10px;
+  }
+}
+
+// 下拉菜单项样式
+.industry-menu-item {
+  padding: 4px 0;
+
+  &__name {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+  }
+
+  &__desc {
+    font-size: 12px;
+    color: #999;
+    margin-top: 2px;
+  }
+}
+
+// 覆盖 Ant Design 下拉菜单样式
+:global {
+  .ant-dropdown {
+    .ant-dropdown-menu {
+      background-color: #fff !important;
+      box-shadow: 0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 9px 28px 8px rgba(0, 0, 0, 0.05);
+      border-radius: 8px;
+      padding: 4px;
+
+      .ant-dropdown-menu-item {
+        color: #333 !important;
+        background-color: transparent;
+        border-radius: 4px;
+
+        &:hover {
+          background-color: #f5f5f5 !important;
+        }
+
+        &-selected {
+          background-color: #e6f4ff !important;
+        }
+      }
+    }
+  }
+}
+
+.base-layout-nav {
+  flex-grow: 1;
+  flex-shrink: 0;
+  overflow: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 8px;
+  padding: 20px 0;
+}

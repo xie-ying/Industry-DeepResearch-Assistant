@@ -1,0 +1,559 @@
+// ============================================
+// Premium Design System - Chat Result
+// ============================================
+
+.chat-message-result {
+  max-width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+
+  .chat-message-result__think {
+    margin-top: 12px;
+    color: #888;
+    border-left: 1px solid #e5e5e5;
+    margin-left: 0;
+    padding-left: 16px;
+    margin-bottom: 12px;
+  }
+
+  .chat-message-result__md {
+    :global {
+      .refrence-token {
+        color: #1a1a1a;
+        font-weight: 600;
+        text-decoration: underline;
+        text-decoration-color: rgba(0, 0, 0, 0.2);
+        text-underline-offset: 2px;
+      }
+    }
+  }
+}
+
+.chat-message-result__source {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+
+  .item {
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 10px;
+    padding: 18px 20px;
+    box-sizing: border-box;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover {
+      background-color: #fafafa;
+      border-color: rgba(0, 0, 0, 0.1);
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+    }
+
+    flex-basis: calc(50% - 8px);
+
+    @media (max-width: 768px) {
+      flex-basis: 100%;
+    }
+  }
+
+  .header {
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    margin-bottom: 8px;
+
+    .id {
+      flex-shrink: 0;
+      color: #1890ff;
+      font-weight: 600;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .icon {
+      flex-shrink: 0;
+      width: 18px;
+      height: 18px;
+      opacity: 0.6;
+    }
+
+    .url {
+      min-width: 0;
+      font-size: 12px;
+      font-weight: 500;
+      color: #999;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .title {
+      flex: 1;
+      min-width: 0;
+      font-size: 14px;
+      font-weight: 500;
+      color: #262626;
+      line-height: 1.5;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  .sourceUrl {
+    font-size: 12px;
+    color: #8c8c8c;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .content {
+    margin-top: 8px;
+    font-size: 13px;
+    line-height: 1.6;
+    color: #888;
+    -webkit-line-clamp: 3;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    max-height: 13px * 1.6 * 3;
+  }
+}
+
+.chat-message-result__images {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+
+  .item {
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    box-sizing: border-box;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover {
+      transform: scale(1.02);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    }
+
+    flex-basis: calc(25% - 9px);
+    overflow: hidden;
+
+    @media (max-width: 768px) {
+      flex-basis: calc(50% - 6px);
+    }
+  }
+
+  .box {
+    height: 0;
+    padding-bottom: 55.94%;
+    position: relative;
+
+    .cover {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+.chat-message-result__thinks {
+  margin-top: 12px;
+  margin-bottom: 20px;
+  color: #888;
+
+  .chat-message-result__thinks-item {
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #1a1a1a;
+
+      .header-icon {
+        flex-shrink: 0;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-size: 10px;
+        background-color: #d0d0d0;
+
+        &.thinking {
+          background-color: #1a1a1a;
+        }
+      }
+    }
+
+    .thinks-results {
+      border-left: 1px solid #e5e5e5;
+      margin: 8px 0;
+      margin-left: 9px;
+      padding: 12px 0;
+      padding-left: 18px;
+
+      .thinks-results__item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+
+        .content {
+          overflow: hidden;
+          font-size: 13px;
+          color: #666;
+        }
+
+        .count {
+          flex-shrink: 0;
+          font-size: 12px;
+          color: #999;
+        }
+      }
+    }
+  }
+}
+
+// ReAct 智能推理过程样式 - Premium Design
+.react-process {
+  margin: 20px 0;
+  padding: 20px 24px;
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.react-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+  letter-spacing: -0.2px;
+}
+
+.react-step {
+  margin: 8px 0;
+  padding: 14px 18px;
+  border-radius: 8px;
+  animation: fadeInUp 0.3s ease-out;
+  transition: all 0.2s ease;
+  background: #fafafa;
+  border: 1px solid transparent;
+  overflow: hidden;
+  max-width: 100%;
+  box-sizing: border-box;
+
+  &--plan {
+    border-left: 2px solid #d0d0d0;
+    background: #fff;
+  }
+
+  &--thought {
+    border-left: 2px solid #e5e5e5;
+    background: #fff;
+  }
+
+  &--action {
+    border-left: 2px solid #1a1a1a;
+    background: #fff;
+  }
+
+  &--observation {
+    border-left: 2px solid #999;
+    background: #fff;
+  }
+
+  &--clickable {
+    cursor: pointer;
+
+    &:hover {
+      background: #f8f8f8;
+      border-color: rgba(0, 0, 0, 0.04);
+    }
+  }
+}
+
+.react-step-detail-hint {
+  margin-left: auto;
+  font-size: 11px;
+  color: #bbb;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+
+  .react-step--clickable:hover & {
+    opacity: 1;
+    color: #888;
+  }
+}
+
+.react-step-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.react-step-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 50px;
+  height: 20px;
+  padding: 0 10px;
+  background: transparent;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 10px;
+  font-weight: 600;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.react-step-icon {
+  font-size: 14px;
+  color: #999;
+}
+
+.react-step-label {
+  font-weight: 600;
+  font-size: 13px;
+  color: #1a1a1a;
+}
+
+.react-step-tool {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  background: transparent;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  font-family: 'SF Mono', 'Monaco', 'Menlo', monospace;
+  font-size: 11px;
+  color: #666;
+}
+
+.react-step-content {
+  font-size: 13px;
+  line-height: 1.7;
+  color: #555;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.react-step-markdown {
+  :global {
+    h1, h2, h3, h4, h5, h6 {
+      margin: 16px 0 8px;
+      color: #1a1a1a;
+      font-weight: 600;
+    }
+
+    h1 { font-size: 18px; }
+    h2 { font-size: 16px; }
+    h3 { font-size: 14px; }
+
+    p {
+      margin: 8px 0;
+    }
+
+    strong {
+      color: #1a1a1a;
+      font-weight: 600;
+    }
+
+    ul, ol {
+      margin: 8px 0;
+      padding-left: 20px;
+    }
+
+    li {
+      margin: 4px 0;
+    }
+  }
+}
+
+.react-step-params {
+  margin-top: 10px;
+  padding: 12px 14px;
+  background: #fafafa;
+  border-radius: 6px;
+  font-family: 'SF Mono', 'Monaco', 'Menlo', monospace;
+  font-size: 10px;
+  line-height: 1.6;
+  overflow-x: auto;
+  max-height: 400px;
+  overflow-y: auto;
+  color: #555;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  max-width: 100%;
+  box-sizing: border-box;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+// 观察内容样式 - 简洁风格
+.obs-section {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.obs-section-icon {
+  font-size: 14px;
+}
+
+.obs-section-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.obs-stat {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-right: 16px;
+  margin-bottom: 4px;
+}
+
+.obs-stat-label {
+  font-size: 12px;
+  color: #888;
+}
+
+.obs-stat-value {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.obs-stat-unit {
+  font-size: 11px;
+  color: #999;
+}
+
+.obs-quality {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.obs-quality-label {
+  font-size: 11px;
+  color: #999;
+  margin-bottom: 4px;
+}
+
+.obs-quality-value {
+  font-size: 12px;
+  line-height: 1.7;
+  color: #555;
+}
+
+.obs-insights-title {
+  margin-top: 10px;
+  margin-bottom: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #666;
+}
+
+.obs-insight-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  margin-bottom: 4px;
+  padding-left: 4px;
+  font-size: 12px;
+  line-height: 1.6;
+  color: #555;
+}
+
+.obs-insight-bullet {
+  color: #999;
+  flex-shrink: 0;
+}
+
+// 数据洞察样式 - Premium Design
+.data-insights {
+  margin: 20px 0;
+  padding: 18px 22px;
+  background: #fff;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.insights-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 14px;
+  letter-spacing: -0.1px;
+}
+
+.insights-list {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+
+  li {
+    position: relative;
+    color: #555;
+    font-size: 13px;
+    line-height: 1.8;
+    margin-bottom: 6px;
+    padding-left: 16px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 10px;
+      width: 4px;
+      height: 4px;
+      background: #d0d0d0;
+      border-radius: 50%;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

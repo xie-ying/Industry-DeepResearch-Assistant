@@ -1,0 +1,83 @@
+.container {
+  padding: 16px 0;
+}
+
+.collecting {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #1890ff;
+
+  span {
+    font-size: 13px;
+  }
+}
+
+.result {
+  margin-top: 24px;
+  border-top: 1px solid #f0f0f0;
+  padding-top: 16px;
+
+  :global(.ant-result) {
+    padding: 16px 0;
+  }
+
+  :global(.ant-result-title) {
+    font-size: 18px;
+  }
+
+  :global(.ant-result-subtitle) {
+    text-align: left;
+  }
+}
+
+.stats {
+  text-align: left;
+  font-size: 14px;
+
+  p {
+    margin: 4px 0;
+
+    strong {
+      color: #1890ff;
+      font-size: 16px;
+    }
+  }
+}
+
+.errors {
+  margin-top: 12px;
+  padding: 8px 12px;
+  background: #fff7e6;
+  border-radius: 4px;
+  font-size: 12px;
+  color: #fa8c16;
+
+  p {
+    margin-bottom: 4px;
+    font-weight: 500;
+  }
+
+  ul {
+    margin: 0;
+    padding-left: 16px;
+
+    li {
+      margin: 2px 0;
+    }
+  }
+}
+
+.closeBtn {
+  padding: 8px 24px;
+  background: #1890ff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+
+  &:hover {
+    background: #40a9ff;
+  }
+}
